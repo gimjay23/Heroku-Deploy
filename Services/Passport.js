@@ -57,9 +57,6 @@ passport.use(
       enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
-      console.log("access token", accessToken);
-      console.log("profile:", profile);
-
       User.findOne({
         facebookId: profile.id
       }).then(existingUser => {

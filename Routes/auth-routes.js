@@ -1,24 +1,25 @@
-const router = require("express").Router();
 const passport = require("passport");
+const express = require("express");
+const app = express();
 
 // auth login
-router.get("/login", (req, res) => {
+app.get("/login", (req, res) => {
   res.render("login", { user: req.user });
 });
 
 // auth logout
-router.get("/logout", (req, res) => {
+app.get("/logout", (req, res) => {
   // handle with passport
   req.logout();
   res.redirect("/");
 });
 
 //auth with google
-router.get(
+app.get(
   "/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
-router.get(
+app.get(
   "/google/callback",
   passport.authenticate("google", { scope: ["profile", "email"] }),
   (req, res) => {
@@ -27,14 +28,14 @@ router.get(
 );
 // callback route for google to redirect to
 // hand control to passport to use code to grab profile info
-router.get(
+app.get(
   "/facebook",
   passport.authenticate("facebook", {
     authType: "rerequest",
     scope: ["email", "public_profile", "user_friends", "manage_pages"]
   })
 );
-router.get(
+app.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
     scope: ["email", "public_profile", "user_friends", "manage_pages"],
@@ -46,4 +47,4 @@ router.get(
   }
 );
 
-module.exports = router;
+module.exports = app;

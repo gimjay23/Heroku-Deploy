@@ -31,6 +31,7 @@
             color: #fff;
             font-size: 18px;
             background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px 5px 5px 5px;
             text-decoration: none;
             padding: 10px;
             display: block;
@@ -44,12 +45,17 @@
             color: #333;
         }
 
+        main a {
+            margin-right:10px;
+        }
+
         .google-btn {
             color: #fff;
             text-decoration: none;
             font-size: 18px;
             padding: 10px;
-            background: #ff5353;
+            background: #fd4f4f;
+            border-radius: 10px 0px 10px 0px;
         }
 
         .fb-login-button {
@@ -58,6 +64,7 @@
             font-size: 18px;
             padding: 10px;
             background: #2641b8;
+            border-radius: 0px 10px 0px 10px
         }
     </style>
 </head>
@@ -68,10 +75,8 @@
             <% if (user) { %>
             <li><a href="/auth/logout">Log out</a></li>
             <% } else { %>
-            <li><a href="/auth/login">Login</a></li>
-            <% } %>
             <li><a href="/">Homepage</a></li>
-            <li><a href="/profile">Profile</a></li>
+            <% } %>
         </ul>
     </nav>
     <header>

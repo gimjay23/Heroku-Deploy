@@ -7,7 +7,6 @@ const profileRoutes = require("./Routes/profile-routes");
 require("./Services/Passport");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-//const router = require('express').Router();
 
 // set view engine
 app.set("view engine", "ejs");
@@ -25,6 +24,7 @@ app.use(passport.session());
 
 mongoose.connect(keys.mongodb.uri, { useNewUrlParser: true });
 
+//how to express app this
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 
