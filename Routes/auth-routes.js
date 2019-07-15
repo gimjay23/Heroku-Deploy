@@ -32,13 +32,13 @@ app.get(
   "/facebook",
   passport.authenticate("facebook", {
     authType: "rerequest",
-    scope: ["email", "public_profile", "user_friends", "manage_pages"]
+    scope: ["email", "public_profile"] //, "user_friends", "manage_pages"]
   })
 );
 app.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    scope: ["email", "public_profile", "user_friends", "manage_pages"],
+    scope: ["email", "public_profile"], //, "user_friends", "manage_pages"],
     failureRedirect: "/login"
   }),
   function(req, res) {
