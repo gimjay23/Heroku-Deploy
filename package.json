@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "how to login",
   "main": "index.js",
-  "engine": {
+  "engines": {
     "node": "12.5.0",
     "npm": "6.9.0"
   },
