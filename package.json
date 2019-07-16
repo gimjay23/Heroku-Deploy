@@ -7,7 +7,6 @@
     "node": "12.5.0",
     "npm": "6.9.0"
   },
-
   "scripts": {
     "test": "log in",
     "start": "node index.js",
