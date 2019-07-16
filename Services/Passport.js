@@ -53,7 +53,7 @@ passport.use(
       clientID: keys.appId,
       clientSecret: keys.appSecret,
       callbackURL: "/auth/facebook/callback",
-      profileFields: ["id", "displayName", "picture.type(small)", "email"],
+      profileFields: ["id", "name", "picture.type(small)", "email"], //displayName
       enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
