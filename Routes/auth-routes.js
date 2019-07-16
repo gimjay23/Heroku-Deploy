@@ -28,17 +28,17 @@ app.get(
 );
 // callback route for google to redirect to
 // hand control to passport to use code to grab profile info
-
-//, "public_profile", "user_friends", "manage_pages"]
 app.get(
   "/facebook",
-  passport.authenticate("facebook", { authType: "rerequest", scope: ["email"] })
+  passport.authenticate("facebook", {
+    authType: "rerequest",
+    scope: ["email"] //, "public_profile", "user_friends", "manage_pages"] <= only needed for development mode
+  })
 );
-//, "public_profile"], , "user_friends", "manage_pages"],
 app.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    scope: ["email"],
+    scope: ["email"], //, "public_profile"], , "user_friends", "manage_pages"], <= only needed for development mode
     failureRedirect: "/login"
   }),
   function(req, res) {
