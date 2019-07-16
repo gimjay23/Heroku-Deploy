@@ -32,13 +32,13 @@ app.get(
   "/facebook",
   passport.authenticate("facebook", {
     authType: "rerequest",
-    scope: ["email"] //, "public_profile", "user_friends", "manage_pages"] <= only needed for development mode
+    scope: ["email", "public_profile"] //, "user_friends", "manage_pages"] <= only needed for development mode
   })
 );
 app.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    scope: ["email"], //, "public_profile"], , "user_friends", "manage_pages"], <= only needed for development mode
+    scope: ["email", "public_profile"], //, "user_friends", "manage_pages"], <= only needed for development mode
     failureRedirect: "/login"
   }),
   function(req, res) {
