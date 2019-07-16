@@ -52,7 +52,7 @@ passport.use(
     {
       clientID: keys.appId,
       clientSecret: keys.appSecret,
-      callbackURL: "/auth/facebook/callback",
+      callbackURL: "https://secret-journey-65819.herokuapp.com/auth/facebook/callback",
       profileFields: ["id", "displayName", "picture.type(small)", "email"], //passReqToCallback: true,
       enableProof: true
     },
