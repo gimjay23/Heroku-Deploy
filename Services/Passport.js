@@ -53,7 +53,7 @@ passport.use(
       clientID: keys.appId,
       clientSecret: keys.appSecret,
       callbackURL: "https://secret-journey-65819.herokuapp.com/auth/facebook/callback", //for production, you need the full url, unlike just /auth ... for dev
-      profileFields: ["name", "picture.type(small)", "email"], // "id", "displayName" // passReqToCallback: true,
+      profileFields: ["id", "displayName", "picture.type(small)", "email"], // passReqToCallback: true,
       enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
