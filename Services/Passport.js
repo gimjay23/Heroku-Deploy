@@ -54,7 +54,6 @@ passport.use(
       clientSecret: keys.appSecret,
       callbackURL: "/auth/facebook/callback", //for production, you need the full url, unlike just /auth ... for dev
       profileFields: ["name", "picture.type(small)", "email"],
-      passReqToCallback: true,
       enableProof: true
     },
     function(accessToken, refreshToken, profile, done) {
