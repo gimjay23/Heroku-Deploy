@@ -4,7 +4,7 @@
   "description": "how to login",
   "main": "index.js",
   "engines": {
-    "node": "12.5.0",
+    "node": "12.6.0",
     "npm": "6.9.0"
   },
   "scripts": {
